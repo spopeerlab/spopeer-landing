@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import WaitlistDialog from "@/components/WaitlistDialog";
 import { useWaitlist } from "@/contexts/WaitlistContext";
-
+import OurMission from "@/components/OurMission";
 const Index = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -35,9 +35,10 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <Features />
-        <HowItWorks />
+        <OurMission />
+        <Features /> 
         <KeyFeatures />
+        
         <CTA />
         <ContactUs />
         {/* Add FAQ section here */}

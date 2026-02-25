@@ -4,16 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { Facebook, Twitter, Instagram, Linkedin, Send, MapPin, Mail  } from "lucide-react";
+import { Facebook, Twitter, Send, MapPin, Mail } from "lucide-react";
 import { getApiUrl } from "@/utils/api";
-import { Link } from "react-router-dom";
 
 // Custom social media icons
 const WhatsAppIcon = () => (
-
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
-      <path fill="none" stroke="#25D366" stroke-width="2" d="M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 29.079097 3.1186875 32.88588 4.984375 36.208984 L 2.0371094 46.730469 A 1.0001 1.0001 0 0 0 3.2402344 47.970703 L 14.210938 45.251953 C 17.434629 46.972929 21.092591 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 21.278025 46 17.792121 45.029635 14.761719 43.333984 A 1.0001 1.0001 0 0 0 14.033203 43.236328 L 4.4257812 45.617188 L 7.0019531 36.425781 A 1.0001 1.0001 0 0 0 6.9023438 35.646484 C 5.0606869 32.523592 4 28.890107 4 25 C 4 13.390466 13.390466 4 25 4 z M 16.642578 13 C 16.001539 13 15.086045 13.23849 14.333984 14.048828 C 13.882268 14.535548 12 16.369511 12 19.59375 C 12 22.955271 14.331391 25.855848 14.613281 26.228516 L 14.615234 26.228516 L 14.615234 26.230469 C 14.588494 26.195329 14.973031 26.752191 15.486328 27.419922 C 15.999626 28.087653 16.717405 28.96464 17.619141 29.914062 C 19.422612 31.812909 21.958282 34.007419 25.105469 35.349609 C 26.554789 35.966779 27.698179 36.339417 28.564453 36.611328 C 30.169845 37.115426 31.632073 37.038799 32.730469 36.876953 C 33.55263 36.755876 34.456878 36.361114 35.351562 35.794922 C 36.246248 35.22873 37.12309 34.524722 37.509766 33.455078 C 37.786772 32.688244 37.927591 31.979598 37.978516 31.396484 C 38.003976 31.104927 38.007211 30.847602 37.988281 30.609375 C 37.969311 30.371148 37.989581 30.188664 37.767578 29.824219 C 37.302009 29.059804 36.774753 29.039853 36.224609 28.767578 C 35.918939 28.616297 35.048661 28.191329 34.175781 27.775391 C 33.303883 27.35992 32.54892 26.991953 32.083984 26.826172 C 31.790239 26.720488 31.431556 26.568352 30.914062 26.626953 C 30.396569 26.685553 29.88546 27.058933 29.587891 27.5 C 29.305837 27.918069 28.170387 29.258349 27.824219 29.652344 C 27.819619 29.649544 27.849659 29.663383 27.712891 29.595703 C 27.284761 29.383815 26.761157 29.203652 25.986328 28.794922 C 25.2115 28.386192 24.242255 27.782635 23.181641 26.847656 L 23.181641 26.845703 C 21.603029 25.455949 20.497272 23.711106 20.148438 23.125 C 20.171937 23.09704 20.145643 23.130901 20.195312 23.082031 L 20.197266 23.080078 C 20.553781 22.728924 20.869739 22.309521 21.136719 22.001953 C 21.515257 21.565866 21.68231 21.181437 21.863281 20.822266 C 22.223954 20.10644 22.02313 19.318742 21.814453 18.904297 L 21.814453 18.902344 C 21.828863 18.931014 21.701572 18.650157 21.564453 18.326172 C 21.426943 18.001263 21.251663 17.580039 21.064453 17.130859 C 20.690033 16.232501 20.272027 15.224912 20.023438 14.634766 L 20.023438 14.632812 C 19.730591 13.937684 19.334395 13.436908 18.816406 13.195312 C 18.298417 12.953717 17.840778 13.022402 17.822266 13.021484 L 17.820312 13.021484 C 17.450668 13.004432 17.045038 13 16.642578 13 z"></path>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50" className="text-white">
+    <path fill="none" stroke="currentColor" strokeWidth="2" d="M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 29.079097 3.1186875 32.88588 4.984375 36.208984 L 2.0371094 46.730469 A 1.0001 1.0001 0 0 0 3.2402344 47.970703 L 14.210938 45.251953 C 17.434629 46.972929 21.092591 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z M 25 4 C 36.609534 4 46 13.390466 46 25 C 46 36.609534 36.609534 46 25 46 C 21.278025 46 17.792121 45.029635 14.761719 43.333984 A 1.0001 1.0001 0 0 0 14.033203 43.236328 L 4.4257812 45.617188 L 7.0019531 36.425781 A 1.0001 1.0001 0 0 0 6.9023438 35.646484 C 5.0606869 32.523592 4 28.890107 4 25 C 4 13.390466 13.390466 4 25 4 z M 16.642578 13 C 16.001539 13 15.086045 13.23849 14.333984 14.048828 C 13.882268 14.535548 12 16.369511 12 19.59375 C 12 22.955271 14.331391 25.855848 14.613281 26.228516 L 14.615234 26.228516 L 14.615234 26.230469 C 14.588494 26.195329 14.973031 26.752191 15.486328 27.419922 C 15.999626 28.087653 16.717405 28.96464 17.619141 29.914062 C 19.422612 31.812909 21.958282 34.007419 25.105469 35.349609 C 26.554789 35.966779 27.698179 36.339417 28.564453 36.611328 C 30.169845 37.115426 31.632073 37.038799 32.730469 36.876953 C 33.55263 36.755876 34.456878 36.361114 35.351562 35.794922 C 36.246248 35.22873 37.12309 34.524722 37.509766 33.455078 C 37.786772 32.688244 37.927591 31.979598 37.978516 31.396484 C 38.003976 31.104927 38.007211 30.847602 37.988281 30.609375 C 37.969311 30.371148 37.989581 30.188664 37.767578 29.824219 C 37.302009 29.059804 36.774753 29.039853 36.224609 28.767578 C 35.918939 28.616297 35.048661 28.191329 34.175781 27.775391 C 33.303883 27.35992 32.54892 26.991953 32.083984 26.826172 C 31.790239 26.720488 31.431556 26.568352 30.914062 26.626953 C 30.396569 26.685553 29.88546 27.058933 29.587891 27.5 C 29.305837 27.918069 28.170387 29.258349 27.824219 29.652344 C 27.819619 29.649544 27.849659 29.663383 27.712891 29.595703 C 27.284761 29.383815 26.761157 29.203652 25.986328 28.794922 C 25.2115 28.386192 24.242255 27.782635 23.181641 26.847656 L 23.181641 26.845703 C 21.603029 25.455949 20.497272 23.711106 20.148438 23.125 C 20.171937 23.09704 20.145643 23.130901 20.195312 23.082031 L 20.197266 23.080078 C 20.553781 22.728924 20.869739 22.309521 21.136719 22.001953 C 21.515257 21.565866 21.68231 21.181437 21.863281 20.822266 C 22.223954 20.10644 22.02313 19.318742 21.814453 18.904297 L 21.814453 18.902344 C 21.828863 18.931014 21.701572 18.650157 21.564453 18.326172 C 21.426943 18.001263 21.251663 17.580039 21.064453 17.130859 C 20.690033 16.232501 20.272027 15.224912 20.023438 14.634766 L 20.023438 14.632812 C 19.730591 13.937684 19.334395 13.436908 18.816406 13.195312 C 18.298417 12.953717 17.840778 13.022402 17.822266 13.021484 L 17.820312 13.021484 C 17.450668 13.004432 17.045038 13 16.642578 13 z"></path>
+  </svg>
 );
 
 const ViberIcon = () => (
@@ -79,15 +77,19 @@ const ContactUs = () => {
   };
 
   return (
-    <section id="contact" className="bg-gray-900 py-20 px-4 sm:px-6">
-      <div className="container mx-auto">
+    <section id="contact" className="py-24 px-6 bg-white relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-30 filter blur-3xl" />
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-100 rounded-full opacity-30 filter blur-3xl" />
+      
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold text-white mb-4"
+            className="text-4xl font-bold text-gray-900 mb-4"
           >
             Get in Touch
           </motion.h2>
@@ -96,24 +98,27 @@ const ContactUs = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-gray-400 max-w-2xl mx-auto"
+            className="text-gray-600 max-w-2xl mx-auto"
           >
             Have questions about Spopeer? We're here to help! Reach out to us through any of the channels below.
           </motion.p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gray-800 p-8 rounded-xl"
+            className="bg-white border border-gray-200 shadow-sm p-8 rounded-2xl"
           >
-            <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+            <span className="inline-block px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+              Get in Touch
+            </span>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Your Name
                 </label>
                 <Input
@@ -122,13 +127,13 @@ const ContactUs = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="John Doe"
-                  className="bg-gray-700 border-gray-600 text-white"
+                  className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500"
                   required
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Email Address
                 </label>
                 <Input
@@ -138,13 +143,13 @@ const ContactUs = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="john@example.com"
-                  className="bg-gray-700 border-gray-600 text-white"
+                  className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500"
                   required
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   Message
                 </label>
                 <Textarea
@@ -153,14 +158,14 @@ const ContactUs = () => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Your message here..."
-                  className="bg-gray-700 border-gray-600 text-white min-h-[120px]"
+                  className="bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500 min-h-[120px]"
                   required
                 />
               </div>
               
               <Button 
                 type="submit" 
-                className="w-full bg-blue-600 hover:bg-blue-700"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Send Message"}
@@ -174,77 +179,56 @@ const ContactUs = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div className="space-y-8">
-              <a href="mailto:erditgr@yahoo.gr" className="flex items-center gap-4 group">
-                <div className="p-3 bg-blue-500/20 rounded-lg group-hover:bg-blue-500/30 transition-colors">
-                  <Mail className="w-8 h-8 text-blue-400" />
+            <div className="space-y-4">
+              <a href="mailto:erditgr@yahoo.gr" className="flex items-center gap-4 p-4 rounded-xl bg-blue-50 border border-blue-100 group hover:bg-blue-100/50 transition-colors">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">Email Us</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">Email Us</h3>
                 </div>
               </a>
               
-              <a href="https://wa.me/306936471452" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                <div className="p-3 bg-green-500/20 rounded-lg group-hover:bg-green-500/30 transition-colors">
+              <a href="https://wa.me/306936471452" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-green-50 border border-green-100 group hover:bg-green-100/50 transition-colors">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-green-600 flex items-center justify-center">
                   <WhatsAppIcon />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-green-400 transition-colors">WhatsApp</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-green-700 transition-colors">WhatsApp</h3>
                 </div>
               </a>
 
-              {/* <div className="flex items-start gap-4">
-                <div className="p-3 bg-purple-500/20 rounded-lg">
-                  <a href="viber://chat?number=%2B306936471452" target="_blank" rel="noopener noreferrer">
-                    <ViberIcon />
-                    <span className="sr-only">Viber</span>
-                  </a>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-1">Viber</h3>
-                  <a href="viber://chat?number=%2B306936471452" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-purple-400 transition-colors">
-                    +30 6936471452
-                  </a>
-                </div>
-              </div> */}
-
-              <a href="https://t.me/+306936471452" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                <div className="p-3 bg-blue-400/20 rounded-lg group-hover:bg-blue-400/30 transition-colors">
+              <a href="https://t.me/+306936471452" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-cyan-50 border border-cyan-100 group hover:bg-cyan-100/50 transition-colors">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-50 flex items-center justify-center border border-cyan-200">
                   <TelegramIcon />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors">Telegram</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-cyan-700 transition-colors">Telegram</h3>
                 </div>
               </a>
               
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-red-500/20 rounded-lg">
-                  <MapPin className="w-8 h-8 text-gray-400" />
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-orange-50 border border-orange-100">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-orange-600 flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-1">Our Location</h3>
-                  <p className="text-gray-300">Athens, Greece</p>
+                  <h3 className="text-lg font-semibold text-gray-900">Our Location</h3>
+                  <p className="text-sm text-gray-600">Athens, Greece</p>
                 </div> 
               </div>
             </div>
             
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                <a href="https://www.facebook.com/spopeer/" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
-                  <Facebook className="w-5 h-5 text-blue-400" />
+            <div className="flex flex-col gap-4 p-6 rounded-xl bg-gray-50 border border-gray-100">
+              <h3 className="text-lg font-semibold text-gray-900">Follow Us</h3>
+              <div className="flex gap-3">
+                <a href="https://www.facebook.com/spopeer/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full border border-gray-200 hover:bg-blue-50 hover:border-blue-200 transition-colors">
+                  <Facebook className="w-5 h-5 text-blue-600" />
                 </a>
-                <a href="https://x.com/Spopeer" target="_blank" rel="noopener noreferrer" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
-                  <Twitter className="w-5 h-5 text-cyan-500" />
+                <a href="https://x.com/Spopeer" target="_blank" rel="noopener noreferrer" className="p-3 bg-white rounded-full border border-gray-200 hover:bg-gray-100 transition-colors">
+                  <Twitter className="w-5 h-5 text-gray-700" />
                 </a>
-                {/* <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
-                  <Instagram className="w-5 h-5 text-pink-400" />
-                </a>
-                <a href="#" className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors">
-                  <Linkedin className="w-5 h-5 text-blue-400" />
-                </a> */}
               </div>
             </div>
           </motion.div>
