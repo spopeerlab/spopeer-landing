@@ -192,7 +192,7 @@ const Hero = () => {
       </div>
 
       {/* Optional: floating stat card on the clear image area (right side) */}
-      <div className="absolute bottom-6 right-6 z-10 hidden sm:block bg-background/95 backdrop-blur-sm rounded-2xl shadow-lg p-4 border border-border/50">
+      {/* <div className="absolute bottom-6 right-6 z-10 hidden sm:block bg-background/95 backdrop-blur-sm rounded-2xl shadow-lg p-4 border border-border/50">
         <div className="flex flex-col gap-2 text-sm">
           <div className="flex items-center gap-2 text-foreground font-medium">
             <span className="text-primary" aria-hidden>🌐</span>
@@ -203,7 +203,7 @@ const Hero = () => {
             {displayCount.toLocaleString()}+ Active Users
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
